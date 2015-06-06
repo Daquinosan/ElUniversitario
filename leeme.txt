@@ -1,0 +1,31 @@
+Buenos dias, en este .txt explico 2 cosas, la primera es, porque use JAVA para la solucion del problema planteado, como
+mencione en la entrevista previa, realice un curso basico de JAVA en el CENEAC en la U.C.V por ende considero que es la
+eleccion mas acertada por mi parte para dar solucion al problema asignado por ustedes. Segundo, explico intentando ser
+lo mas detallado posible como solucione el problema asignado y la respuesta es:
+
+Analizando el problema anteriormente planteado decimos que se requiere la captura de X cantidad de numeros de cuenta,
+leer cada uno de los numeros introducidos, seguidamente organizarlos en orden ascendente, contar cuantas veces se repite
+cada numero y para la salida imprimir cada numero de cuenta (sin repetir) seguido de un contador que indica cuantas veces 
+se repite dicho numero.
+
+1)ENTRADA: Para la captura de datos se utilizan en el main 2 ciclos DO-WHILE. El primero se usa para capturar el X 
+mencionado en el  parrafo anterior, que es la cantidad de cuentas que se desea ordenar. Para esto se creo un objeto de 
+tipo "teclado (clase que hereda de scanner)". Este objeto tiene un metodo llamado "leerEntero" que devuelve un INT el 
+cual es validado y se rechaza si es negativo o en caso de ser un dato distinto de INT. 
+
+El otro DO-WHILE se utiliza con el metodo llamado "Compruebo (tambien de la clase teclado)" para llenar un "ArrayList" de 
+nombre "banco", donde se captura y se valida cada numero de cuenta utilizando los siguientes pasos: 1)Se capturan los 
+datos de entrada como "String" y se valida que su longitud no sea diferente de 31 que es la suma de todos los digitos de 
+la cuenta, mas los espacios en blanco. 2) Se extraen los "subString" de las posiciones donde estan ubicados los numeros 
+en el "String", se procede a transformarlos a INT para ver si dichos valores son numericos y si son positivos. 3) Se 
+replica la cadena de "String" donde esta guardado el numero de cuenta, se extraen los espacios en blanco y se valida que
+la longitud no sea diferente de 26 que es la suma de todos los digitos de la cuenta sin espacios en blanco.
+
+2)PROCESO-SALIDA: En este paso se utiliza un ciclo "FOR" con un contador "K" inicializado en 1, se comprueba la igualdad 
+entre la posicion "I (La cual comienza en 0)" del "ArrayList" con la posicion "I+1", si son iguales se procede a borrar la 
+posicion "i+1" e incrementar el contador "K" y decrementar el contador "I" para volver a la posicion anterior. Si la 
+igualdad no se comprueba se procede a imprimir el numero de cuenta de la posicion "I" concatenado con el contador "K" y
+seguido inicializamos nuevamente "K" en 1. Por ultimo tenemos una iteracion que dice "SI(contador!=TamañoArrayList-1)" 
+esta iteracion esta el inicio del "FOR" y quiere decir que si la corrida esta en la ultima posicion del arreglo se imprime
+ese posicion con cel contador "K".
+
